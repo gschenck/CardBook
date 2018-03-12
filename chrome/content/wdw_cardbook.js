@@ -1872,8 +1872,30 @@ if ("undefined" == typeof(wdw_cardbook)) {
 				if (document.commandDispatcher.focusedElement.getAttribute('id') == "cardsTree") {
 					var myPrefId = cardbookUtils.getAccountId(myAccountId);
 					if (cardbookPreferences.getEnabled(myPrefId)) {
+						// calculate cursor position in tree after delete
+						var CardTree = document.getElementById('cardsTree');
+						var currentFirstVisibleRow = CardTree.boxObject.getFirstVisibleRow();
+						var currentLastVisibleRow = CardTree.boxObject.getLastVisibleRow();
+						var numRanges = CardTree.view.selection.getRangeCount();
+						var start = new Object();
+						var end = new Object();
+						var minPositionOfSelectedCard = 999999;
+						for (let i = 0; i < numRanges; i++) {
+							CardTree.view.selection.getRangeAt(i,start,end);
+							for (let k = start.value; k <= end.value; k++) {
+								minPositionOfSelectedCard = Math.min(k,minPositionOfSelectedCard);
+							}
+						}
+						// delete entries
 						if (!cardbookPreferences.getReadOnly(myPrefId)) {
 							wdw_cardbook.deleteCardsAndValidate("cardbook.cardRemovedDirect");
+						}
+						// restore cursor position in tree after delete
+						CardTree.view.selection.select(minPositionOfSelectedCard);
+						if (minPositionOfSelectedCard < currentFirstVisibleRow || minPositionOfSelectedCard > currentLastVisibleRow) {
+							CardTree.boxObject.scrollToRow(minPositionOfSelectedCard);
+						} else {
+							CardTree.boxObject.scrollToRow(currentFirstVisibleRow);
 						}
 					}
 				} else if (document.commandDispatcher.focusedElement.getAttribute('id') == "accountsOrCatsTree") {
