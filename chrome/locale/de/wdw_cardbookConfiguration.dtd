@@ -48,7 +48,7 @@
 <!ENTITY deleteRestrictionLabel "Löschen">
 <!ENTITY deleteRestrictionAccesskey "L">
 <!ENTITY emailsCollectionLabel "Sammlung ausgehender Email-Adressen">
-<!ENTITY emailsCollectionTooltip "Erweitert die standardmäßige Sammlung ausgehender Email-Adressen in Thunderbird. Falls aktiviert, werden Email-Adressen, die nicht in einem Adressbuch von Cardbook vorhanden sind, automatisch den ausgewählten Adressbüchern hinzufügt.">
+<!ENTITY emailsCollectionTooltip "Erweitert die standardmäßige Sammlung ausgehender Email-Adressen in Thunderbird. Falls aktiviert, werden Email-Adressen, die nicht in einem Adressbuch von CardBook vorhanden sind, automatisch den ausgewählten Adressbüchern hinzufügt.">
 <!ENTITY emailsCollectionEnabledLabel "Aktiviert">
 <!ENTITY emailsCollectionMailNameLabel "Email-Konto">
 <!ENTITY emailsCollectionABNameLabel "Adressbuch">
@@ -227,7 +227,7 @@
 <!ENTITY deleteVCardLabel "Löschen">
 <!ENTITY deleteVCardAccesskey "L">
 
-<!ENTITY birthdayListWarn "Geburtstage werden nur in Adressbüchern von CardBook gesucht. Das Format für Geburtstage wird unten den Eigenschaften des Adressbuchs festgelegt.">
+<!ENTITY birthdayListWarn "Geburtstage werden nur in Adressbüchern von CardBook gesucht. Das Format für Geburtstage wird unter den Eigenschaften des Adressbuchs festgelegt.">
 <!ENTITY addressBooksGroupboxLabel "Adressbücher">
 <!ENTITY calendarsGroupboxLabel "Kalender">
 <!ENTITY searchGroupboxLabel "Suchen">
